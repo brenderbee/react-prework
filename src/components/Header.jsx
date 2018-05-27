@@ -1,5 +1,4 @@
-import React from "react";
-import TicketList from "./TicketList";
+import React from 'react';
 
 function Header(){
   return (
