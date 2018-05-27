@@ -2,16 +2,33 @@ import React from 'react';
 import Ticket from './Ticket';
 
 function TicketList(){
+  var masterTicketList = [
+    {
+      names: 'Thato and Haley',
+      location: '3A',
+      issue: 'Firebase won\'t save record. Halp.'
+    },
+    {
+      names: 'Sleater and Kinney',
+      location: '4B',
+      issue: 'Fox image not displaying on page, can only see duck?'
+    },
+    {
+      names: 'Imani & Jacob',
+      location: '9F',
+      issue: 'Donkey picture not displaying on hover in Zoology app. :('
+    }
+  ];
+
   return (
     <div>
-      <Ticket
-        location="3A"
-        names="Thato and Haley"
-        issue="Firebase will not save record!"/>
-      <Ticket
-        location="10B"
-        names="Brenda and Ramiro"
-        issue="Development server won't spin up."/>
+      <hr/>
+      {masterTicketList.map((ticket, index) =>
+        <Ticket names={ticket.names}
+          location={ticket.location}
+          issue={ticket.issue}
+          key={index}/>
+      )}
     </div>
   );
 }
